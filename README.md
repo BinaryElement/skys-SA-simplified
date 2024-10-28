@@ -12,6 +12,9 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * All qualities unlocked with automation
   * T3 Module recipes reverted to base game
   * Cliff Explosives recipe reverted to base game
+  * Adjustible (cheaper by default) rocket parts amount required to complete a rocket
+  * (Disabled by default) Rocket Parts only require fuel
+  * Space Foundations stack higher, and are crafted in sets of 10 at no extra cost/time.
 * Vulcanus
   * Calcite requirement removed from the iron/copper ore to molten metal recipes
   * Vulcanus location requirement removed from Big Miner and Foundry
