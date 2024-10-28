@@ -1,0 +1,9 @@
+{
+  "name": "skys-SA-simplified",
+  "version": "0.0.1",
+  "title": "Sky's Simplified Space Age",
+  "author": "SkyKiwi",
+  "factorio_version": "2.0",
+  "dependencies": ["base >= 2.0", "space-age >= 2.0"],
+  "description": "Makes Space Age less frustrating for newer players primarily via simplified recipes and removal of location requirements (and thus less interplanetary logistics)."
+}

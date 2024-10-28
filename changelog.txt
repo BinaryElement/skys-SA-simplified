@@ -1,0 +1,14 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 07. 06. 2024
+  General:
+    - TBI All qualities unlocked with automation
+  Vulcanus:
+    - Calcite requirement removed from "metal ore -> molten metal" recipes.
+    - TBI Vulcanus location requirement removed from Big Miner and Foundry
+    - TBI Artillery and Artillery Ammo recipe reverted to base game
+  Fulgora:
+    - TBI Concrete requirement removed from recycler recipe
+    - TBI Fulgora location requirement removed from EM Plant and Recycler
+    - TBI Stone requirement removed from Holmium Solution
+    - TBI Stone requiirement removed from Electrolyte
