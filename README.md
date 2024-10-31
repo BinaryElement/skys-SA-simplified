@@ -13,8 +13,9 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * T3 Module recipes reverted to base game
   * Cliff Explosives recipe reverted to base game
   * Adjustible (cheaper by default) rocket parts amount required to complete a rocket
-  * (Disabled by default) Rocket Parts only require fuel
   * Space Foundations stack higher, and are crafted in sets of 10 at no extra cost/time.
+  * (Disabled by default) Rocket Parts only require fuel
+  * (Disabled by default) Revert the 2.0 PLD nerf, because why not
 * Vulcanus
   * Calcite requirement removed from the iron/copper ore to molten metal recipes
   * Vulcanus location requirement removed from Big Miner and Foundry
