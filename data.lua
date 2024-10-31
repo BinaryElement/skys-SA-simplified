@@ -131,29 +131,36 @@ if settings.startup["sssa-easy-space-foundations"].value then
         }
     }
 end
+if settings.startup["sssa-pld-nerf-revert"].value then
+    data.raw["active-defense-equipment"]["personal-laser-defense-equipment"].attack_parameters.damage_modifier = 3
+    --data.raw["active-defense-equipment"]["personal-laser-defense-equipment"].attack_parameters.damage_modifier = 30
+    --data.raw["active-defense-equipment"]["personal-laser-defense-equipment"].attack_parameters.ammo_type.energy_consumption = "5kJ"
+end
 if settings.startup["sssa-easter-egg"].value then
-    local qm = table.deepcopy(data.raw.module["quality-module-3"])
-    qm.name = "quality-module-3-sssa"
+    local qm = table.deepcopy(data.raw.module["quality-module"])
+    qm.name = "quality-module-sssa"
     qm.effect = {
         quality = 100,
         speed = 1.00
     }
+    qm.hidden = true
     local qmsmelt = table.deepcopy(data.raw.recipe["iron-plate"])
-    qm.name = "quality-module-3-sssa"
-    qm.ingredients = {
+    qmsmelt.name = "quality-module-sssa"
+    qmsmelt.ingredients = {
         {
           amount = 1,
-          name = "quality-module-1",
+          name = "quality-module",
           type = "item"
         }
     }
-    qm.results = {
+    qmsmelt.results = {
         {
           amount = 1,
-          name = "quality-module-3-sssa",
+          name = "quality-module-sssa",
           type = "item"
         }
     }
+    qmsmelt.hidden = true
     data:extend({qm, qmsmelt})
 end
 
@@ -304,4 +311,24 @@ if settings.startup["sssa-remove-stone-from-liquid-recipes"].value then
 end
 
 -- Gleba
+
+if settings.startup["sssa-gleba-science-lifetime-multiplier"].value ~= 1 then
+  local m = settings.startup["sssa-gleba-science-lifetime-multiplier"].value
+  if m == 0 then
+    data.raw.tool["agricultural-science-pack"].spoil_ticks = nil
+  else
+    data.raw.tool["agricultural-science-pack"].spoil_ticks = data.raw.tool["agricultural-science-pack"].spoil_ticks * m
+  end
+end
+
+if settings.startup["sssa-gleba-science-no-spoilage-result"].value then
+  data.raw.tool["agricultural-science-pack"].spoil_result = nil
+end
+
+if settings.startup["sssa-gleba-agriculture-anywhere"].value then
+  data.raw.item["artificial-jellynut-soil"].place_as_tile.condition_size = 1
+  data.raw.item["artificial-jellynut-soil"].place_as_tile.tile_condition = nil
+  data.raw.item["artificial-yumako-soil"].place_as_tile.condition_size = 1
+  data.raw.item["artificial-yumako-soil"].place_as_tile.tile_condition = nil
+end
 -- Aquilo

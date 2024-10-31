@@ -46,6 +46,13 @@ data:extend({
     },
     {
         type = "bool-setting",
+        name = "sssa-pld-nerf-revert",
+        setting_type = "startup",
+        default_value = false,
+        order = "aaf"
+    },
+    {
+        type = "bool-setting",
         name = "sssa-easter-egg",
         setting_type = "startup",
         default_value = true,
@@ -91,5 +98,29 @@ data:extend({
         order = "eab"
     },
     -- Gleba Settings f
+    
+    {
+        type = "int-setting",
+        name = "sssa-gleba-science-lifetime-multiplier",
+        setting_type = "startup",
+        default_value = 1,
+        minimum_value = 0,
+        maximum_value = 100,
+        order = "faa"
+    },
+    {
+        type = "bool-setting",
+        name = "sssa-gleba-science-no-spoilage-result",
+        setting_type = "startup",
+        default_value = false,
+        order = "fab"
+    },
+    {
+        type = "bool-setting",
+        name = "sssa-gleba-agriculture-anywhere",
+        setting_type = "startup",
+        default_value = false,
+        order = "fab"
+    },
     -- Aquilo Settings g
 })

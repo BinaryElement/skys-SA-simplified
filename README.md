@@ -21,5 +21,9 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * Vulcanus location requirement removed from Big Miner and Foundry
   * Artillery and Artillery Ammo recipes reverted to base game
 * Fulgora:
-  * Fulgota location requirement removed from Recycler and EM Plant
+  * Fulgora location requirement removed from Recycler and EM Plant
   * Stone requirement removed from Holmium Solution and Electrolyte
+* Gleba:
+  * (Disabled by default) Multiply the lifetime of Gleba's Agricultural Science Packs
+  * (Disabled by default) Remove the spoilage result from Gleba's Agricultural Science Packs
+  * (Disabled by default) Place artificial gleba soil anywhere
