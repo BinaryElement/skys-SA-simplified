@@ -51,13 +51,6 @@ data:extend({
         default_value = false,
         order = "aaf"
     },
-    {
-        type = "bool-setting",
-        name = "sssa-easter-egg",
-        setting_type = "startup",
-        default_value = true,
-        order = "azz"
-    },
     -- Nauvis Settings b
     {
         type = "bool-setting",

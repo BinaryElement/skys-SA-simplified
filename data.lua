@@ -133,10 +133,8 @@ if settings.startup["sssa-easy-space-foundations"].value then
 end
 if settings.startup["sssa-pld-nerf-revert"].value then
     data.raw["active-defense-equipment"]["personal-laser-defense-equipment"].attack_parameters.damage_modifier = 3
-    --data.raw["active-defense-equipment"]["personal-laser-defense-equipment"].attack_parameters.damage_modifier = 30
-    --data.raw["active-defense-equipment"]["personal-laser-defense-equipment"].attack_parameters.ammo_type.energy_consumption = "5kJ"
 end
-if settings.startup["sssa-easter-egg"].value then
+--[[if settings.startup["sssa-easter-egg"].value then
     local qm = table.deepcopy(data.raw.module["quality-module"])
     qm.name = "quality-module-sssa"
     qm.effect = {
@@ -144,25 +142,25 @@ if settings.startup["sssa-easter-egg"].value then
         speed = 1.00
     }
     qm.hidden = true
-    local qmsmelt = table.deepcopy(data.raw.recipe["iron-plate"])
-    qmsmelt.name = "quality-module-sssa"
-    qmsmelt.ingredients = {
+    local qmr = table.deepcopy(data.raw.recipe[])
+    qmr.name = "quality-module-sssa"
+    qmr.ingredients = {
         {
           amount = 1,
           name = "quality-module",
           type = "item"
         }
     }
-    qmsmelt.results = {
+    qmr.results = {
         {
           amount = 1,
           name = "quality-module-sssa",
           type = "item"
         }
     }
-    qmsmelt.hidden = true
-    data:extend({qm, qmsmelt})
-end
+    qmr.hidden = true
+    data:extend({qm, qmr})
+end]]
 
 -- Space
 
