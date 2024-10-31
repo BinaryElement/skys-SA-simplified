@@ -167,6 +167,9 @@ end
 -- Space
 
 -- Nauvis
+if settings.startup["sssa-remove-nauvis-location-requirements"].value then
+  data.raw.lab["biolab"].surface_conditions = nil
+end
 
 -- Vulcanus
 if settings.startup["sssa-remove-vulcanus-location-requirements"].value then
@@ -311,6 +314,9 @@ if settings.startup["sssa-remove-stone-from-liquid-recipes"].value then
 end
 
 -- Gleba
+if settings.startup["sssa-remove-gleba-location-requirements"].value then
+  data.raw.recipe["biochamber"].surface_conditions = nil
+end
 
 if settings.startup["sssa-gleba-science-lifetime-multiplier"].value ~= 1 then
   local m = settings.startup["sssa-gleba-science-lifetime-multiplier"].value
@@ -328,7 +334,9 @@ end
 if settings.startup["sssa-gleba-agriculture-anywhere"].value then
   data.raw.item["artificial-jellynut-soil"].place_as_tile.condition_size = 1
   data.raw.item["artificial-jellynut-soil"].place_as_tile.tile_condition = nil
+  data.raw.item["artificial-jellynut-soil"].place_as_tile.condition.layers = {water_tile = true}
   data.raw.item["artificial-yumako-soil"].place_as_tile.condition_size = 1
   data.raw.item["artificial-yumako-soil"].place_as_tile.tile_condition = nil
+  data.raw.item["artificial-yumako-soil"].place_as_tile.condition.layers = {water_tile = true}
 end
 -- Aquilo

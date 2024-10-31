@@ -7,23 +7,26 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
 
 # Features
 * Configuration:
-  * You can enable/disable whichever features you want
+  * You can enable/disable whichever features you want.
 * General:
-  * All qualities unlocked with automation
-  * T3 Module recipes reverted to base game
-  * Cliff Explosives recipe reverted to base game
-  * Adjustible (cheaper by default) rocket parts amount required to complete a rocket
+  * All qualities unlocked with automation.
+  * T3 Module recipes reverted to base game.
+  * Cliff Explosives recipe reverted to base game.
+  * Adjustible (cheaper by default) rocket parts amount required to complete a rocket.
   * Space Foundations stack higher, and are crafted in sets of 10 at no extra cost/time.
-  * (Disabled by default) Rocket Parts only require fuel
-  * (Disabled by default) Revert the 2.0 PLD nerf, because why not
+  * (Disabled by default) Rocket Parts only require fuel.
+  * (Disabled by default) Revert the 2.0 PLD nerf, because why not.
+* Nauvis
+  * Nauvis requirement removed from Biolab placement.
 * Vulcanus
-  * Calcite requirement removed from the iron/copper ore to molten metal recipes
-  * Vulcanus location requirement removed from Big Miner and Foundry
-  * Artillery and Artillery Ammo recipes reverted to base game
+  * Vulcanus location requirement removed from Big Miner and Foundry.
+  * Calcite requirement removed from the iron/copper ore to molten metal recipes.
+  * Artillery and Artillery Ammo recipes reverted to base game.
 * Fulgora:
-  * Fulgora location requirement removed from Recycler and EM Plant
-  * Stone requirement removed from Holmium Solution and Electrolyte
+  * Fulgora location requirement removed from Recycler and EM Plant.
+  * Stone requirement removed from Holmium Solution and Electrolyte.
 * Gleba:
-  * (Disabled by default) Multiply the lifetime of Gleba's Agricultural Science Packs
-  * (Disabled by default) Remove the spoilage result from Gleba's Agricultural Science Packs
-  * (Disabled by default) Place artificial gleba soil anywhere
+  * Gleba location requirement removed from Biochamber.
+  * (Disabled by default) Multiply the lifetime of Gleba's Agricultural Science Packs.
+  * (Disabled by default) Remove the spoilage result from Gleba's Agricultural Science Packs.
+  * (Disabled by default) Place artificial gleba soil anywhere.

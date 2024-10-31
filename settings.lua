@@ -59,6 +59,14 @@ data:extend({
         order = "azz"
     },
     -- Nauvis Settings b
+    {
+        type = "bool-setting",
+        name = "sssa-remove-nauvis-location-requirements",
+        setting_type = "startup",
+        default_value = true,
+        order = "baa"
+    },
+
     -- Space Settings c
     -- Vulcanus Settings d
     {
@@ -97,30 +105,37 @@ data:extend({
         default_value = false,
         order = "eab"
     },
+
     -- Gleba Settings f
-    
     {
-        type = "int-setting",
+        type = "bool-setting",
+        name = "sssa-remove-gleba-location-requirements",
+        setting_type = "startup",
+        default_value = true,
+        order = "faa"
+    },
+    {
+        type = "double-setting",
         name = "sssa-gleba-science-lifetime-multiplier",
         setting_type = "startup",
         default_value = 1,
         minimum_value = 0,
         maximum_value = 100,
-        order = "faa"
+        order = "fab"
     },
     {
         type = "bool-setting",
         name = "sssa-gleba-science-no-spoilage-result",
         setting_type = "startup",
         default_value = false,
-        order = "fab"
+        order = "fac"
     },
     {
         type = "bool-setting",
         name = "sssa-gleba-agriculture-anywhere",
         setting_type = "startup",
         default_value = false,
-        order = "fab"
+        order = "fad"
     },
     -- Aquilo Settings g
 })
