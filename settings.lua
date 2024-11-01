@@ -138,10 +138,17 @@ data:extend({
     },
     {
         type = "bool-setting",
+        name = "sssa-remove-fulgora-material-requirements",
+        setting_type = "startup",
+        default_value = true,
+        order = "eab"
+    },
+    {
+        type = "bool-setting",
         name = "sssa-remove-stone-from-liquid-recipes",
         setting_type = "startup",
         default_value = false,
-        order = "eab"
+        order = "eac"
     },
 
     -- Gleba Settings f
