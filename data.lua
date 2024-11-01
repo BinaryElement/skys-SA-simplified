@@ -222,6 +222,53 @@ if settings.startup["sssa-remove-vulcanus-location-requirements"].value then
     data.raw.recipe["foundry"].surface_conditions = nil
     data.raw.recipe["big-mining-drill"].surface_conditions = nil
 end
+if settings.startup["sssa-remove-vulcanus-material-requirements"].value then
+  data.raw.recipe["foundry"].ingredients = {
+    {
+      amount = 50,
+      name = "steel-plate",
+      type = "item"
+    },
+    {
+      amount = 30,
+      name = "electronic-circuit",
+      type = "item"
+    },
+    {
+      amount = 20,
+      name = "refined-concrete",
+      type = "item"
+    },
+    {
+      amount = 20,
+      name = "lubricant",
+      type = "fluid"
+    }
+  }
+  data.raw.recipe["big-mining-drill"].ingredients = {
+    {
+      amount = 1,
+      name = "electric-mining-drill",
+      type = "item"
+    },
+    {
+      amount = 200,
+      name = "molten-iron",
+      type = "fluid"
+    },
+    {
+      amount = 10,
+      name = "electric-engine-unit",
+      type = "item"
+    },
+    {
+      amount = 10,
+      name = "advanced-circuit",
+      type = "item"
+    }
+  }
+
+end
 if settings.startup["sssa-remove-calcite-from-melting-ores"].value then
     data.raw.recipe["molten-copper"].ingredients = {
         {

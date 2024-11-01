@@ -109,17 +109,24 @@ data:extend({
     },
     {
         type = "bool-setting",
-        name = "sssa-remove-calcite-from-melting-ores",
+        name = "sssa-remove-vulcanus-material-requirements",
         setting_type = "startup",
         default_value = true,
         order = "dab"
     },
     {
         type = "bool-setting",
-        name = "sssa-revert-artillery-recipes",
+        name = "sssa-remove-calcite-from-melting-ores",
         setting_type = "startup",
         default_value = true,
         order = "dac"
+    },
+    {
+        type = "bool-setting",
+        name = "sssa-revert-artillery-recipes",
+        setting_type = "startup",
+        default_value = true,
+        order = "dad"
     },
     -- Fulgora Settings e
     {
