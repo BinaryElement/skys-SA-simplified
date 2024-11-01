@@ -31,6 +31,7 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * Stone requirement removed from Holmium Solution and Electrolyte.
 * Gleba:
   * Gleba location requirement removed from Biochamber.
+  * Biochamber no longer requires Pentapod Eggs.
   * (Disabled by default) Multiply the lifetime of Gleba's Agricultural Science Packs.
   * (Disabled by default) Remove the spoilage result from Gleba's Agricultural Science Packs.
   * (Disabled by default) Place artificial gleba soil anywhere.
