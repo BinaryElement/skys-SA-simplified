@@ -146,27 +146,34 @@ data:extend({
         order = "faa"
     },
     {
+        type = "bool-setting",
+        name = "sssa-remove-biochamber-pentapod-requirement",
+        setting_type = "startup",
+        default_value = true,
+        order = "fab"
+    },
+    {
         type = "double-setting",
         name = "sssa-gleba-science-lifetime-multiplier",
         setting_type = "startup",
         default_value = 1,
         minimum_value = 0,
         maximum_value = 100,
-        order = "fab"
+        order = "fac"
     },
     {
         type = "bool-setting",
         name = "sssa-gleba-science-no-spoilage-result",
         setting_type = "startup",
         default_value = false,
-        order = "fac"
+        order = "fad"
     },
     {
         type = "bool-setting",
         name = "sssa-gleba-agriculture-anywhere",
         setting_type = "startup",
         default_value = false,
-        order = "fad"
+        order = "fae"
     },
     -- Aquilo Settings g
 })
