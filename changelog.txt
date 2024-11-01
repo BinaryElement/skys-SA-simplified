@@ -1,5 +1,11 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.0.1
-Date: 07. 06. 2024
+Version: 0.1.1
+Date: 01. 11. 2024
+  Features:
+    - Added option to remove tungsten carbide from the recipes for Foundry and Big Mining Drills.
+    - Added option to remove holmium plates from the recipe for Electromagnetic Plant.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 01. 11. 2024
   Features:
     - Initial release.
