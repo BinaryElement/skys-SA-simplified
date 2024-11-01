@@ -5,5 +5,5 @@
   "author": "SkyKiwi",
   "factorio_version": "2.0",
   "dependencies": ["base >= 2.0", "space-age >= 2.0"],
-  "description": "Makes Space Age less frustrating for newer players primarily via simplified recipes and removal of location requirements (and thus less interplanetary logistics)."
+  "description": "Fully toggleable/customizable suite of tweaks to make Space Age easier to play.  Makes Space Age less frustrating for newer players primarily via simplified recipes and removal of location requirements (and thus less interplanetary logistics).\n\nSee the GitHub page for a full list of options."
 }
