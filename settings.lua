@@ -51,6 +51,29 @@ data:extend({
         default_value = false,
         order = "aaf"
     },
+    {
+        type = "double-setting",
+        name = "sssa-nutrients-lifetime-multiplier",
+        setting_type = "startup",
+        default_value = 1,
+        minimum_value = 0,
+        maximum_value = 100,
+        order = "aag"
+    },
+    {
+        type = "bool-setting",
+        name = "sssa-nutrients-no-spoilage-result",
+        setting_type = "startup",
+        default_value = false,
+        order = "aah"
+    },
+    {
+        type = "bool-setting",
+        name = "sssa-nutrients-burnable",
+        setting_type = "startup",
+        default_value = false,
+        order = "aai"
+    },
     -- Nauvis Settings b
     {
         type = "bool-setting",

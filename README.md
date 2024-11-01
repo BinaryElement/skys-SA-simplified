@@ -16,6 +16,9 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * Space Foundations stack higher, and are crafted in sets of 10 at no extra cost/time.
   * (Disabled by default) Rocket Parts only require fuel.
   * (Disabled by default) Revert the 2.0 PLD nerf, because why not.
+  * (Disabled by default) Multiply the lifetime of Nutrients.
+  * (Disabled by default) Remove the spoilage result from Nutrients.
+  * (Disabled by default) Allow Nutrients to be burned.
 * Nauvis
   * Nauvis requirement removed from Biolab placement.
 * Vulcanus

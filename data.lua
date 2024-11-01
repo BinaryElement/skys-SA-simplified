@@ -134,6 +134,21 @@ end
 if settings.startup["sssa-pld-nerf-revert"].value then
     data.raw["active-defense-equipment"]["personal-laser-defense-equipment"].attack_parameters.damage_modifier = 3
 end
+if settings.startup["sssa-nutrients-lifetime-multiplier"].value ~= 1 then
+  local m = settings.startup["sssa-nutrients-lifetime-multiplier"].value
+  if m == 0 then
+    data.raw.item["nutrients"].spoil_ticks = nil
+  else
+    data.raw.item["nutrients"].spoil_ticks = data.raw.item["nutrients"].spoil_ticks * m
+  end
+end
+if settings.startup["sssa-nutrients-no-spoilage-result"].value then
+  data.raw.item["nutrients"].spoil_result = nil
+end
+if settings.startup["sssa-nutrients-burnable"].value then
+  data.raw.item["nutrients"].fuel_category = "chemical"
+  data.raw.item["nutrients"].fuel_value = "250kJ"
+end
 --[[if settings.startup["sssa-easter-egg"].value then
     local qm = table.deepcopy(data.raw.module["quality-module"])
     qm.name = "quality-module-sssa"
