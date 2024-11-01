@@ -380,7 +380,23 @@ if settings.startup["sssa-remove-fulgora-location-requirements"].value then
     data.raw.recipe["recycler"].surface_conditions = nil
 end
 if settings.startup["sssa-remove-fulgora-material-requirements"].value then
-    data.raw.recipe["electromagnetic-plant"].ingredients = {}
+    data.raw.recipe["electromagnetic-plant"].ingredients = {
+      {
+        amount = 50,
+        name = "steel-plate",
+        type = "item"
+      },
+      {
+        amount = 50,
+        name = "processing-unit",
+        type = "item"
+      },
+      {
+        amount = 50,
+        name = "refined-concrete",
+        type = "item"
+      }
+    }
 end
 if settings.startup["sssa-remove-stone-from-liquid-recipes"].value then
     data.raw.recipe["electrolyte"].ingredients = {
