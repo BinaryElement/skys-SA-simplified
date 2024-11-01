@@ -82,6 +82,21 @@ data:extend({
         default_value = true,
         order = "baa"
     },
+    {
+        type = "bool-setting",
+        name = "sssa-capture-rocket-no-bioflux",
+        setting_type = "startup",
+        default_value = true,
+        order = "bab"
+    },
+    {
+        name = "sssa-captured-biters-food-type",
+        type = "string-setting",
+        default_value = "Either",
+        allowed_values = {"Bioflux (No Change)", "Nutrients", "Either"}, --Removed "None" because of errors
+        setting_type = "startup",
+        order = "bac"
+    },
 
     -- Space Settings c
     -- Vulcanus Settings d

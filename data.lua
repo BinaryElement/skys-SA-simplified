@@ -183,6 +183,39 @@ end]]
 if settings.startup["sssa-remove-nauvis-location-requirements"].value then
   data.raw.lab["biolab"].surface_conditions = nil
 end
+if settings.startup["sssa-capture-rocket-no-bioflux"].value then
+  data.raw.recipe["capture-robot-rocket"].ingredients = {
+    {
+      amount = 1,
+      name = "flying-robot-frame",
+      type = "item"
+    },
+    {
+      amount = 2,
+      name = "steel-plate",
+      type = "item"
+    },
+    {
+      amount = 20,
+      name = "nutrients",
+      type = "item"
+    },
+    {
+      amount = 2,
+      name = "processing-unit",
+      type = "item"
+    }
+  }
+end
+if settings.startup["sssa-captured-biters-food-type"].value == "Nutrients" then
+  data.raw["assembling-machine"]["captive-biter-spawner"].energy_source.burner_usage = "nutrients"
+  data.raw["assembling-machine"]["captive-biter-spawner"].energy_source.fuel_categories = {"nutrients"}
+elseif settings.startup["sssa-captured-biters-food-type"].value == "Either" then
+  data.raw["assembling-machine"]["captive-biter-spawner"].energy_source.fuel_categories = {"nutrients", "food"}
+--elseif settings.startup["sssa-captured-biters-food-type"].value == "None" then --Removed for errors
+  --data.raw["assembling-machine"]["captive-biter-spawner"].energy_usage = nil
+  --data.raw["assembling-machine"]["captive-biter-spawner"].energy_source = nil
+end
 
 -- Vulcanus
 if settings.startup["sssa-remove-vulcanus-location-requirements"].value then
@@ -329,6 +362,31 @@ end
 -- Gleba
 if settings.startup["sssa-remove-gleba-location-requirements"].value then
   data.raw.recipe["biochamber"].surface_conditions = nil
+end
+
+if settings.startup["sssa-remove-biochamber-pentapod-requirement"].value then
+  data.raw.recipe["biochamber"].ingredients = {
+    {
+      amount = 5,
+      name = "nutrients",
+      type = "item"
+    },
+    {
+      amount = 20,
+      name = "iron-plate",
+      type = "item"
+    },
+    {
+      amount = 5,
+      name = "electronic-circuit",
+      type = "item"
+    },
+    {
+      amount = 1,
+      name = "landfill",
+      type = "item"
+    }
+  }
 end
 
 if settings.startup["sssa-gleba-science-lifetime-multiplier"].value ~= 1 then

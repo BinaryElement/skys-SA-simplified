@@ -21,6 +21,7 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * (Disabled by default) Allow Nutrients to be burned.
 * Nauvis
   * Nauvis requirement removed from Biolab placement.
+  * (Disabled by default) Change the food source captive biter nests require.
 * Vulcanus
   * Vulcanus location requirement removed from Big Miner and Foundry.
   * Calcite requirement removed from the iron/copper ore to molten metal recipes.
