@@ -145,10 +145,10 @@ end
 if settings.startup["sssa-nutrients-no-spoilage-result"].value then
   data.raw.item["nutrients"].spoil_result = nil
 end
-if settings.startup["sssa-nutrients-burnable"].value then
+--[[if settings.startup["sssa-nutrients-burnable"].value then
   data.raw.item["nutrients"].fuel_category = "chemical"
   data.raw.item["nutrients"].fuel_value = "250kJ"
-end
+end]]
 --[[if settings.startup["sssa-easter-egg"].value then
     local qm = table.deepcopy(data.raw.module["quality-module"])
     qm.name = "quality-module-sssa"

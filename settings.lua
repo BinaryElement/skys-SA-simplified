@@ -67,13 +67,13 @@ data:extend({
         default_value = false,
         order = "aah"
     },
-    {
+    --[[{
         type = "bool-setting",
         name = "sssa-nutrients-burnable",
         setting_type = "startup",
         default_value = false,
         order = "aai"
-    },
+    },]]
     -- Nauvis Settings b
     {
         type = "bool-setting",

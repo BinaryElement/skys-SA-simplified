@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 02. 11. 2024
+  Bugfixes:
+    - Removed "Burnable Nutrients" as it was causing nutrients to no longer work in biochambers.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 01. 11. 2024
   Features:
