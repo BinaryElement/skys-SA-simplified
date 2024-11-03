@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 02. 11. 2024
+  Features:
+    - Added Turbo Belt and Stack Inserter to the list of recipes that can be simplified.
+    - Simplified recipes now offer three options - unchanged, planet-specific materials removed, or planet-specific materials replaced.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 02. 11. 2024
   Bugfixes:

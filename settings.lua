@@ -108,11 +108,28 @@ data:extend({
         order = "daa"
     },
     {
-        type = "bool-setting",
-        name = "sssa-remove-vulcanus-material-requirements",
+        name = "sssa-remove-vulcanus-material-requirements-foundry",
+        type = "string-setting",
+        default_value = "Replace",
+        allowed_values = {"No Change", "Replace", "Remove"},
         setting_type = "startup",
-        default_value = true,
-        order = "dab"
+        order = "daba"
+    },
+    {
+        name = "sssa-remove-vulcanus-material-requirements-bmd",
+        type = "string-setting",
+        default_value = "Replace",
+        allowed_values = {"No Change", "Replace", "Remove"},
+        setting_type = "startup",
+        order = "dabb"
+    },
+    {
+        name = "sssa-remove-vulcanus-material-requirements-belts",
+        type = "string-setting",
+        default_value = "Replace",
+        allowed_values = {"No Change", "Replace", "Remove"},
+        setting_type = "startup",
+        order = "dabc"
     },
     {
         type = "bool-setting",
@@ -137,11 +154,12 @@ data:extend({
         order = "eaa"
     },
     {
-        type = "bool-setting",
-        name = "sssa-remove-fulgora-material-requirements",
+        name = "sssa-remove-fulgora-material-requirements-emp",
+        type = "string-setting",
+        default_value = "Replace",
+        allowed_values = {"No Change", "Replace", "Remove"},
         setting_type = "startup",
-        default_value = true,
-        order = "eab"
+        order = "eaba"
     },
     {
         type = "bool-setting",
@@ -160,11 +178,20 @@ data:extend({
         order = "faa"
     },
     {
-        type = "bool-setting",
-        name = "sssa-remove-biochamber-pentapod-requirement",
+        name = "sssa-remove-gleba-material-requirements-biochamber",
+        type = "string-setting",
+        default_value = "Remove",
+        allowed_values = {"No Change", "Replace", "Remove"},
         setting_type = "startup",
-        default_value = true,
-        order = "fab"
+        order = "faba"
+    },
+    {
+        name = "sssa-remove-gleba-material-requirements-inserter",
+        type = "string-setting",
+        default_value = "Replace",
+        allowed_values = {"No Change", "Replace", "Remove"},
+        setting_type = "startup",
+        order = "fabb"
     },
     {
         type = "double-setting",

@@ -221,53 +221,75 @@ end
 if settings.startup["sssa-remove-vulcanus-location-requirements"].value then
     data.raw.recipe["foundry"].surface_conditions = nil
     data.raw.recipe["big-mining-drill"].surface_conditions = nil
+    data.raw.recipe["turbo-transport-belt"].surface_conditions = nil
+    data.raw.recipe["turbo-underground-belt"].surface_conditions = nil
+    data.raw.recipe["turbo-splitter"].surface_conditions = nil
 end
-if settings.startup["sssa-remove-vulcanus-material-requirements"].value then
-  data.raw.recipe["foundry"].ingredients = {
-    {
-      amount = 50,
-      name = "steel-plate",
-      type = "item"
-    },
-    {
-      amount = 30,
-      name = "electronic-circuit",
-      type = "item"
-    },
-    {
-      amount = 20,
-      name = "refined-concrete",
-      type = "item"
-    },
-    {
-      amount = 20,
-      name = "lubricant",
-      type = "fluid"
-    }
-  }
-  data.raw.recipe["big-mining-drill"].ingredients = {
-    {
-      amount = 1,
-      name = "electric-mining-drill",
-      type = "item"
-    },
-    {
-      amount = 200,
-      name = "molten-iron",
-      type = "fluid"
-    },
-    {
-      amount = 10,
-      name = "electric-engine-unit",
-      type = "item"
-    },
-    {
-      amount = 10,
-      name = "advanced-circuit",
-      type = "item"
-    }
-  }
-
+if settings.startup["sssa-remove-vulcanus-material-requirements-foundry"].value == "Remove" or settings.startup["sssa-remove-vulcanus-material-requirements-foundry"].value == "Replace" then
+  local t = data.raw.recipe["foundry"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "tungsten-carbide" then
+        if settings.startup["sssa-remove-vulcanus-material-requirements-foundry"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "plastic-bar"
+        end
+      end
+    end
+  end
+end
+if settings.startup["sssa-remove-vulcanus-material-requirements-bmd"].value == "Remove" or settings.startup["sssa-remove-vulcanus-material-requirements-bmd"].value == "Replace" then
+  local t = data.raw.recipe["big-mining-drill"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "tungsten-carbide" then
+        if settings.startup["sssa-remove-vulcanus-material-requirements-bmd"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "plastic-bar"
+        end
+      end
+    end
+  end
+end
+if settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value == "Remove" or settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value == "Replace" then
+  local t = data.raw.recipe["turbo-transport-belt"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "tungsten-plate" then
+        if settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value == "Remove" then
+        table.remove(t, i)
+        else
+        t[i].name = "steel-plate"
+        end
+      end
+    end
+  end
+  t = data.raw.recipe["turbo-underground-belt"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "tungsten-plate" then
+        if settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value == "Remove" then
+        table.remove(t, i)
+        else
+        t[i].name = "steel-plate"
+        end
+      end
+    end
+  end
+  t = data.raw.recipe["turbo-splitter"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "tungsten-plate" then
+        if settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value == "Remove" then
+        table.remove(t, i)
+        else
+        t[i].name = "steel-plate"
+        end
+      end
+    end
+  end
 end
 if settings.startup["sssa-remove-calcite-from-melting-ores"].value then
     data.raw.recipe["molten-copper"].ingredients = {
@@ -379,24 +401,19 @@ if settings.startup["sssa-remove-fulgora-location-requirements"].value then
     data.raw.recipe["electromagnetic-plant"].surface_conditions = nil
     data.raw.recipe["recycler"].surface_conditions = nil
 end
-if settings.startup["sssa-remove-fulgora-material-requirements"].value then
-    data.raw.recipe["electromagnetic-plant"].ingredients = {
-      {
-        amount = 50,
-        name = "steel-plate",
-        type = "item"
-      },
-      {
-        amount = 50,
-        name = "processing-unit",
-        type = "item"
-      },
-      {
-        amount = 50,
-        name = "refined-concrete",
-        type = "item"
-      }
-    }
+if settings.startup["sssa-remove-fulgora-material-requirements-emp"].value == "Remove" or settings.startup["sssa-remove-fulgora-material-requirements-emp"].value == "Replace" then
+  local t = data.raw.recipe["electromagnetic-plant"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "holmium-plate" then
+        if settings.startup["sssa-remove-fulgora-material-requirements-emp"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "iron-plate"
+        end
+      end
+    end
+  end
 end
 if settings.startup["sssa-remove-stone-from-liquid-recipes"].value then
     data.raw.recipe["electrolyte"].ingredients = {
@@ -430,29 +447,37 @@ if settings.startup["sssa-remove-gleba-location-requirements"].value then
   data.raw.recipe["biochamber"].surface_conditions = nil
 end
 
-if settings.startup["sssa-remove-biochamber-pentapod-requirement"].value then
-  data.raw.recipe["biochamber"].ingredients = {
-    {
-      amount = 5,
-      name = "nutrients",
-      type = "item"
-    },
-    {
-      amount = 20,
-      name = "iron-plate",
-      type = "item"
-    },
-    {
-      amount = 5,
-      name = "electronic-circuit",
-      type = "item"
-    },
-    {
-      amount = 1,
-      name = "landfill",
-      type = "item"
-    }
-  }
+if settings.startup["sssa-remove-gleba-material-requirements-biochamber"].value == "Remove" or settings.startup["sssa-remove-gleba-material-requirements-biochamber"].value == "Replace" then
+  local t = data.raw.recipe["biochamber"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "pentapod-egg" then
+        if settings.startup["sssa-remove-gleba-material-requirements-biochamber"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "biter-egg"
+        end
+      end
+    end
+  end
+end
+
+if settings.startup["sssa-remove-gleba-material-requirements-inserter"].value == "Remove" or settings.startup["sssa-remove-gleba-material-requirements-inserter"].value == "Replace" then
+  local t = data.raw.recipe["stack-inserter"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "carbon-fiber" then
+        if settings.startup["sssa-remove-gleba-material-requirements-inserter"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "plastic-bar"
+        end
+      end
+      if t[i] ~= nil and t[i].name == "jelly" then
+        table.remove(t, i)
+      end
+    end
+  end
 end
 
 if settings.startup["sssa-gleba-science-lifetime-multiplier"].value ~= 1 then
