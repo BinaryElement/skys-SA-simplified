@@ -21,13 +21,16 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * (Disabled by default) Allow Nutrients to be burned.
 * Nauvis
   * Nauvis requirement removed from Biolab placement.
+  * Capture Rocket crafted with Nutrients instead of Bioflux.
   * (Disabled by default) Change the food source captive biter nests require.
 * Vulcanus
   * Vulcanus location requirement removed from Big Miner and Foundry.
+  * Foundry and Big Mining Drill no longer require tungsten.
   * Calcite requirement removed from the iron/copper ore to molten metal recipes.
   * Artillery and Artillery Ammo recipes reverted to base game.
 * Fulgora:
   * Fulgora location requirement removed from Recycler and EM Plant.
+  * Electromagnetic Plant no longer requires Holmium Plates.
   * Stone requirement removed from Holmium Solution and Electrolyte.
 * Gleba:
   * Gleba location requirement removed from Biochamber.
