@@ -21,7 +21,7 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
 * Nauvis
   * Nauvis requirement removed from Biolab placement.
   * Capture Rocket crafted with Nutrients instead of Bioflux.
-  * (Disabled by default) Change the food source captive biter nests require.
+  * Captive biter nests can require Nutrients instead of Bioflux, or they can accept either.
 * Vulcanus
   * Vulcanus location requirement removed from crafting Foundries, Big Mining Drills, and Turbo Belts.
   * Foundry recipe's Tungsten Carbide requirement removed or replaced (with plastic).
