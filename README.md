@@ -9,7 +9,7 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
 * Configuration:
   * You can enable/disable whichever features you want.
 * General:
-  * All qualities unlocked with automation.
+  * (Disabled by default) All qualities unlocked with automation.
   * T3 Module recipes reverted to base game.
   * Cliff Explosives recipe reverted to base game.
   * Adjustible (cheaper by default) rocket parts amount required to complete a rocket.

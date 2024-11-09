@@ -4,7 +4,7 @@ data:extend({
         type = "bool-setting",
         name = "sssa-unlock-all-qualities",
         setting_type = "startup",
-        default_value = true,
+        default_value = false,
         order = "aaa"
     },
     {

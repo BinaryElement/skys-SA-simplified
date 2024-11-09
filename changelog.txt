@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+Date: 09. 11. 2024
+  Features:
+    - Unlock All Qualities option now respects modded qualities.
+    - Unlock All Qualities option is now less likely to conflict with other mods.
+    - For conflicts with mods that ARE still an issue, Unlock All Qualities option is no longer enabled by default.
+    - Added no-quality as an invisible optional quality to prevent conflict.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 09. 11. 2024
   Features:
