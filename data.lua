@@ -1,5 +1,8 @@
 
--- General
+
+-- *************************************************
+-- ******************** General ********************
+-- *************************************************
 if settings.startup["sssa-unlock-all-qualities"].value then
     data.raw["technology"]["epic-quality"].hidden = true
     data.raw["technology"]["legendary-quality"].hidden = true
@@ -177,9 +180,69 @@ end]]
     data:extend({qm, qmr})
 end]]
 
--- Space
 
--- Nauvis
+-- *************************************************
+-- ********************* Space *********************
+-- *************************************************
+--TODO populate these with modded asteroids?
+local small_asteroid_table = { 
+  data.raw["asteroid"]["small-oxide-asteroid"],
+  data.raw["asteroid"]["small-carbonic-asteroid"],
+  data.raw["asteroid"]["small-metallic-asteroid"],
+  data.raw["asteroid"]["small-promethium-asteroid"],
+}
+local medium_asteroid_table = {
+  data.raw["asteroid"]["medium-oxide-asteroid"],
+  data.raw["asteroid"]["medium-carbonic-asteroid"],
+  data.raw["asteroid"]["medium-metallic-asteroid"],
+  data.raw["asteroid"]["medium-promethium-asteroid"],
+}
+local big_asteroid_table = {
+  data.raw["asteroid"]["big-oxide-asteroid"],
+  data.raw["asteroid"]["big-carbonic-asteroid"],
+  data.raw["asteroid"]["big-metallic-asteroid"],
+  data.raw["asteroid"]["big-promethium-asteroid"],
+}
+local huge_asteroid_table = {
+  data.raw["asteroid"]["huge-oxide-asteroid"],
+  data.raw["asteroid"]["huge-carbonic-asteroid"],
+  data.raw["asteroid"]["huge-metallic-asteroid"],
+  data.raw["asteroid"]["huge-promethium-asteroid"],
+}
+
+if settings.startup["sssa-asteroid-health-multiplier"].value ~= 1 then
+  local m = settings.startup["sssa-asteroid-health-multiplier"].value
+  for i=#huge_asteroid_table,1,-1 do
+    huge_asteroid_table[i].max_health = math.ceil(huge_asteroid_table[i].max_health * m)
+    big_asteroid_table[i].max_health = math.ceil(big_asteroid_table[i].max_health * m)
+    medium_asteroid_table[i].max_health = math.ceil(medium_asteroid_table[i].max_health * m)
+    small_asteroid_table[i].max_health = math.ceil(small_asteroid_table[i].max_health * m)
+  end
+end
+
+local asteroid_reduction_count = settings.startup["sssa-downgrade-asteroid-defenses"].value
+while asteroid_reduction_count > 0 do
+  for i=#huge_asteroid_table,1,-1 do
+    huge_asteroid_table[i].resistances = big_asteroid_table[i].resistances
+    big_asteroid_table[i].resistances = medium_asteroid_table[i].resistances
+    medium_asteroid_table[i].resistances = small_asteroid_table[i].resistances
+    small_asteroid_table[i].resistances = nil
+  end
+  asteroid_reduction_count = asteroid_reduction_count - 1
+end
+while asteroid_reduction_count < 0 do
+  for i=#huge_asteroid_table,1,-1 do
+    small_asteroid_table[i].resistances = medium_asteroid_table[i].resistances
+    medium_asteroid_table[i].resistances = big_asteroid_table[i].resistances
+    big_asteroid_table[i].resistances = huge_asteroid_table[i].resistances
+  end
+  asteroid_reduction_count = asteroid_reduction_count + 1
+end
+
+
+-- ************************************************
+-- ******************** Nauvis ********************
+-- ************************************************
 if settings.startup["sssa-remove-nauvis-location-requirements"].value then
   data.raw.lab["biolab"].surface_conditions = nil
 end
@@ -396,7 +459,9 @@ if settings.startup["sssa-revert-artillery-recipes"].value then
     }
 end
 
--- Fulgora
+-- *************************************************
+-- ******************** Fulgora ********************
+-- *************************************************
 if settings.startup["sssa-remove-fulgora-location-requirements"].value then
     data.raw.recipe["electromagnetic-plant"].surface_conditions = nil
     data.raw.recipe["recycler"].surface_conditions = nil
@@ -442,7 +507,9 @@ if settings.startup["sssa-remove-stone-from-liquid-recipes"].value then
     }
 end
 
--- Gleba
+-- *************************************************
+-- ********************* Gleba *********************
+-- *************************************************
 if settings.startup["sssa-remove-gleba-location-requirements"].value then
   data.raw.recipe["biochamber"].surface_conditions = nil
 end
@@ -501,4 +568,6 @@ if settings.startup["sssa-gleba-agriculture-anywhere"].value then
   data.raw.item["artificial-yumako-soil"].place_as_tile.tile_condition = nil
   data.raw.item["artificial-yumako-soil"].place_as_tile.condition.layers = {water_tile = true}
 end
--- Aquilo
+-- ************************************************
+-- ******************** Aquilo ********************
+-- ************************************************

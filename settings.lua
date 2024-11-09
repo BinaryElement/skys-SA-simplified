@@ -99,6 +99,25 @@ data:extend({
     },
 
     -- Space Settings c
+    {
+        type = "double-setting",
+        name = "sssa-asteroid-health-multiplier",
+        setting_type = "startup",
+        default_value = 1,
+        minimum_value = 0.01,
+        maximum_value = 1000,
+        order = "caa"
+    },
+    {
+        name = "sssa-downgrade-asteroid-defenses",
+        type = "int-setting",
+        default_value = 0,
+        minimum_value = -4,
+        maximum_value = 4,
+        setting_type = "startup",
+        order = "cab"
+    },
+
     -- Vulcanus Settings d
     {
         type = "bool-setting",
