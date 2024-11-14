@@ -334,6 +334,22 @@ if settings.startup["sssa-remove-calcite-from-melting-ores"].value then
         }
     }
 end
+if settings.startup["sssa-remove-calcite-from-lava-metals"].value then
+    data.raw.recipe["molten-copper-from-lava"].ingredients = {
+      {
+        amount = 500,
+        name = "lava",
+        type = "fluid"
+      }
+    }
+    data.raw.recipe["molten-iron-from-lava"].ingredients = {
+      {
+        amount = 500,
+        name = "lava",
+        type = "fluid"
+      }
+    }
+end
 if settings.startup["sssa-revert-artillery-recipes"].value then
     data.raw.recipe["artillery-shell"].ingredients = {
         {
@@ -535,3 +551,88 @@ end
 -- ************************************************
 -- ******************** Aquilo ********************
 -- ************************************************
+
+if settings.startup["sssa-remove-aquilo-location-requirements"].value then
+  data.raw.recipe["cryogenic-plant"].surface_conditions = nil
+end
+if settings.startup["sssa-remove-planetary-material-requirements-cryo"].value ~= "No Change" then
+  local t = data.raw.recipe["cryogenic-plant"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "superconductor" then
+        if settings.startup["sssa-remove-planetary-material-requirements-cryo"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "plastic-bar"
+        end
+      end
+      if t[i] ~= nil and t[i].name == "lithium-plate" then
+        if settings.startup["sssa-remove-planetary-material-requirements-cryo"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "iron-plate"
+        end
+      end
+    end
+  end
+end
+if settings.startup["sssa-easy-foundations"].value then
+    --data.raw.item["foundation"].stack_size = 100
+    data.raw.item["foundation"].weight = 10000
+    data.raw.recipe["foundation"].results = {
+        {
+            amount = 10,
+            name = "foundation",
+            type = "item"
+        }
+    }
+end
+if settings.startup["sssa-alternate-foundation-recipe"].value ~= "No Change" then
+  if settings.startup["sssa-alternate-foundation-recipe"].value == "Complex (Nauvis)" then
+    data.raw.recipe["foundation"].ingredients = {
+      {
+        amount = 4,
+        name = "steel-plate",
+        type = "item"
+      },
+      {
+        amount = 4,
+        name = "iron-plate",
+        type = "item"
+      },
+      {
+        amount = 10,
+        name = "concrete",
+        type = "item"
+      },
+      {
+        amount = 20,
+        name = "stone",
+        type = "item"
+      },
+      {
+        amount = 20,
+        name = "water",
+        type = "fluid"
+      }
+    }
+  elseif settings.startup["sssa-alternate-foundation-recipe"].value == "Simple (Nauvis)" then
+    data.raw.recipe["foundation"].ingredients = {
+      {
+        amount = 4,
+        name = "steel-plate",
+        type = "item"
+      },
+      {
+        amount = 20,
+        name = "stone",
+        type = "item"
+      },
+      {
+        amount = 20,
+        name = "water",
+        type = "fluid"
+      }
+    }
+  end
+end

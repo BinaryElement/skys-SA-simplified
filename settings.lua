@@ -155,7 +155,14 @@ data:extend({
         name = "sssa-remove-calcite-from-melting-ores",
         setting_type = "startup",
         default_value = true,
-        order = "dac"
+        order = "daca"
+    },
+    {
+        type = "bool-setting",
+        name = "sssa-remove-calcite-from-lava-metals",
+        setting_type = "startup",
+        default_value = false,
+        order = "dacb"
     },
     {
         type = "bool-setting",
@@ -236,4 +243,34 @@ data:extend({
         order = "fae"
     },
     -- Aquilo Settings g
+    {
+        type = "bool-setting",
+        name = "sssa-remove-aquilo-location-requirements",
+        setting_type = "startup",
+        default_value = true,
+        order = "gaa"
+    },
+    {
+        name = "sssa-remove-planetary-material-requirements-cryo",
+        type = "string-setting",
+        default_value = "Replace",
+        allowed_values = {"No Change", "Replace", "Remove"},
+        setting_type = "startup",
+        order = "gab"
+    },
+    {
+        name = "sssa-easy-foundations",
+        type = "bool-setting",
+        setting_type = "startup",
+        default_value = true,
+        order = "gac"
+    },
+    {
+        name = "sssa-alternate-foundation-recipe",
+        type = "string-setting",
+        default_value = "No Change",
+        allowed_values = {"No Change", "Complex (Nauvis)", "Simple (Nauvis)"},
+        setting_type = "startup",
+        order = "gad"
+    },
 })

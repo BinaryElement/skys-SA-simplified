@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+Date: 14. 11. 2024
+  Features:
+    - Added option to remove Aquilo location requirement from Cryogenic Plants
+    - Added option to remove/replace Aquilo materials in the recipe for Cryogenic Plants
+    - Added Easy Foundations option
+    - Added alternate recipes for Foundations
+    - Added option to remove calcite from lava-to-molten-metal recipes
+---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 09. 11. 2024
   Features:
