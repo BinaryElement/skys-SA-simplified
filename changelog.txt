@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 14. 11. 2024
+  Features:
+    - Added option to remove superconductors from Quality Module 3 recipe.
+    - Changed recycling recipes to match changed crafting recipes.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 14. 11. 2024
   Features:

@@ -16,6 +16,13 @@ data:extend({
     },
     {
         type = "bool-setting",
+        name = "sssa-quality-module-no-superconductor",
+        setting_type = "startup",
+        default_value = true,
+        order = "aabb"
+    },
+    {
+        type = "bool-setting",
         name = "sssa-revert-cliff-explosive-recipe",
         setting_type = "startup",
         default_value = true,

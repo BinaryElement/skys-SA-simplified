@@ -21,6 +21,14 @@ if settings.startup["sssa-revert-module-recipes"].value then
           type = "item"
         }
     }
+    local t = data.raw.recipe["speed-module-3-recycling"].results
+    if t ~= nil then
+      for i=#t,1,-1 do
+        if t[i].name == "tungsten-carbide" then
+          table.remove(t, i)
+        end
+      end
+    end
     data.raw.recipe["productivity-module-3"].ingredients = {
         {
           amount = 4,
@@ -38,6 +46,14 @@ if settings.startup["sssa-revert-module-recipes"].value then
           type = "item"
         }
     }
+    t = data.raw.recipe["productivity-module-3-recycling"].results
+    if t ~= nil then
+      for i=#t,1,-1 do
+        if t[i].name == "biter-egg" then
+          table.remove(t, i)
+        end
+      end
+    end
     data.raw.recipe["efficiency-module-3"].ingredients = {
         {
           amount = 4,
@@ -55,6 +71,41 @@ if settings.startup["sssa-revert-module-recipes"].value then
           type = "item"
         }
     }
+    t = data.raw.recipe["efficiency-module-3-recycling"].results
+    if t ~= nil then
+      for i=#t,1,-1 do
+        if t[i].name == "spoilage" then
+          table.remove(t, i)
+        end
+      end
+    end
+end
+if settings.startup["sssa-quality-module-no-superconductor"].value then
+  data.raw.recipe["quality-module-3"].ingredients = {
+    {
+      amount = 4,
+      name = "quality-module-2",
+      type = "item"
+    },
+    {
+      amount = 5,
+      name = "advanced-circuit",
+      type = "item"
+    },
+    {
+      amount = 5,
+      name = "processing-unit",
+      type = "item"
+    }
+  }
+  local t = data.raw.recipe["quality-module-3-recycling"].results
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "superconductor" then
+        table.remove(t, i)
+      end
+    end
+  end
 end
 if settings.startup["sssa-revert-cliff-explosive-recipe"].value then
     data.raw.recipe["cliff-explosives"].ingredients = {
@@ -74,6 +125,26 @@ if settings.startup["sssa-revert-cliff-explosive-recipe"].value then
           type = "item"
         }
     }
+    data.raw.recipe["cliff-explosives-recycling"].results = {
+      {
+        amount = 2.5,
+        extra_count_fraction = 0.5,
+        name = "explosives",
+        type = "item"
+      },
+      {
+        amount = 0.25,
+        extra_count_fraction = 0.25,
+        name = "grenade",
+        type = "item"
+      },
+      {
+        amount = 0.25,
+        extra_count_fraction = 0.25,
+        name = "barrel",
+        type = "item"
+      }
+  }
 end
 if settings.startup["sssa-rocket-parts-per-rocket"].value ~= 50 then
     data.raw["rocket-silo"]["rocket-silo"].rocket_parts_required = 10
@@ -211,7 +282,23 @@ if settings.startup["sssa-remove-nauvis-location-requirements"].value then
   data.raw.lab["biolab"].surface_conditions = nil
 end
 if settings.startup["sssa-capture-rocket-no-bioflux"].value then
-  data.raw.recipe["capture-robot-rocket"].ingredients = {
+  local t = data.raw.recipe["capture-robot-rocket"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "bioflux" then
+          t[i].name = "nutrients"
+      end
+    end
+  end
+  t = data.raw.recipe["capture-robot-rocket-recycling"].results
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "bioflux" then
+          t[i].name = "nutrients"
+      end
+    end
+  end
+  --[[data.raw.recipe["capture-robot-rocket"].ingredients = {
     {
       amount = 1,
       name = "flying-robot-frame",
@@ -232,7 +319,7 @@ if settings.startup["sssa-capture-rocket-no-bioflux"].value then
       name = "processing-unit",
       type = "item"
     }
-  }
+  }]]
 end
 if settings.startup["sssa-captured-biters-food-type"].value == "Nutrients" then
   data.raw["assembling-machine"]["captive-biter-spawner"].energy_source.burner_usage = "nutrients"
@@ -265,6 +352,18 @@ if settings.startup["sssa-remove-vulcanus-material-requirements-foundry"].value 
       end
     end
   end
+  t = data.raw.recipe["foundry-recycling"].results
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "tungsten-carbide" then
+        if settings.startup["sssa-remove-vulcanus-material-requirements-foundry"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "plastic-bar"
+        end
+      end
+    end
+  end
 end
 if settings.startup["sssa-remove-vulcanus-material-requirements-bmd"].value == "Remove" or settings.startup["sssa-remove-vulcanus-material-requirements-bmd"].value == "Replace" then
   local t = data.raw.recipe["big-mining-drill"].ingredients
@@ -279,8 +378,21 @@ if settings.startup["sssa-remove-vulcanus-material-requirements-bmd"].value == "
       end
     end
   end
+  t = data.raw.recipe["big-mining-drill-recycling"].results
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "tungsten-carbide" then
+        if settings.startup["sssa-remove-vulcanus-material-requirements-bmd"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "plastic-bar"
+        end
+      end
+    end
+  end
 end
 if settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value == "Remove" or settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value == "Replace" then
+  -- Belt
   local t = data.raw.recipe["turbo-transport-belt"].ingredients
   if t ~= nil then
     for i=#t,1,-1 do
@@ -293,6 +405,20 @@ if settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value ==
       end
     end
   end
+  t = data.raw.recipe["turbo-transport-belt-recycling"].results
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "tungsten-plate" then
+        if settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value == "Remove" then
+        table.remove(t, i)
+        else
+        t[i].name = "steel-plate"
+        end
+      end
+    end
+  end
+
+  -- Undie
   t = data.raw.recipe["turbo-underground-belt"].ingredients
   if t ~= nil then
     for i=#t,1,-1 do
@@ -305,7 +431,33 @@ if settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value ==
       end
     end
   end
+  t = data.raw.recipe["turbo-underground-belt-recycling"].results
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "tungsten-plate" then
+        if settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value == "Remove" then
+        table.remove(t, i)
+        else
+        t[i].name = "steel-plate"
+        end
+      end
+    end
+  end
+
+  -- Splitter
   t = data.raw.recipe["turbo-splitter"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "tungsten-plate" then
+        if settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value == "Remove" then
+        table.remove(t, i)
+        else
+        t[i].name = "steel-plate"
+        end
+      end
+    end
+  end
+  t = data.raw.recipe["turbo-splitter-recycling"].results
   if t ~= nil then
     for i=#t,1,-1 do
       if t[i].name == "tungsten-plate" then
@@ -368,26 +520,26 @@ if settings.startup["sssa-revert-artillery-recipes"].value then
           type = "item"
         }
     }
-    --[[data.raw.recipe["artillery-shell-recycling"].results = {
-        {
-            extra_count_fraction = 0.25,
-            amount = 1,
-            name = "radar",
-            type = "item"
-        },
-        {
-            extra_count_fraction = 0.25,
-            amount = 4,
-            name = "explosive-cannon-shell",
-            type = "item"
-        },
-        {
-            extra_count_fraction = 0.25,
-            amount = 8,
-            name = "explosives",
-            type = "item"
-        }
-    }]]
+    data.raw.recipe["artillery-shell-recycling"].results = {
+      {
+        amount = 0.25,
+        extra_count_fraction = 0.25,
+        name = "radar",
+        type = "item"
+      },
+      {
+        amount = 1,
+        extra_count_fraction = 0,
+        name = "explosive-cannon-shell",
+        type = "item"
+      },
+      {
+        amount = 2,
+        extra_count_fraction = 0,
+        name = "explosives",
+        type = "item"
+      }
+    }
     data.raw.recipe["artillery-turret"].ingredients = {
         {
             amount = 60,
@@ -409,6 +561,32 @@ if settings.startup["sssa-revert-artillery-recipes"].value then
             name = "advanced-circuit",
             type = "item"
         }
+    }
+    data.raw.recipe["artillery-turret-recycling"].results = {
+      {
+          amount = 15,
+          extra_count_fraction=0,
+          name = "steel-plate",
+          type = "item"
+      },
+      {
+          amount = 15,
+          extra_count_fraction=0,
+          name = "concrete",
+          type = "item"
+      },
+      {
+          amount = 10,
+          extra_count_fraction=0,
+          name = "iron-gear-wheel",
+          type = "item"
+      },
+      {
+          amount = 5,
+          extra_count_fraction=0,
+          name = "advanced-circuit",
+          type = "item"
+      }
     }
     data.raw.recipe["artillery-wagon"].ingredients = {
         {
@@ -437,6 +615,38 @@ if settings.startup["sssa-revert-artillery-recipes"].value then
             type = "item"
         }
     }
+    data.raw.recipe["artillery-wagon-recycling"].results = {
+      {
+          amount = 16,
+          extra_count_fraction = 0,
+          name = "engine-unit",
+          type = "item"
+      },
+      {
+          amount = 2.5,
+          extra_count_fraction = 0.5,
+          name = "iron-gear-wheel",
+          type = "item"
+      },
+      {
+          amount = 10,
+          extra_count_fraction = 0,
+          name = "steel-plate",
+          type = "item"
+      },
+      {
+          amount = 4,
+          extra_count_fraction = 0,
+          name = "pipe",
+          type = "item"
+      },
+      {
+          amount = 5,
+          extra_count_fraction = 0,
+          name = "advanced-circuit",
+          type = "item"
+      }
+  }
 end
 
 -- *************************************************
@@ -448,6 +658,18 @@ if settings.startup["sssa-remove-fulgora-location-requirements"].value then
 end
 if settings.startup["sssa-remove-fulgora-material-requirements-emp"].value == "Remove" or settings.startup["sssa-remove-fulgora-material-requirements-emp"].value == "Replace" then
   local t = data.raw.recipe["electromagnetic-plant"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "holmium-plate" then
+        if settings.startup["sssa-remove-fulgora-material-requirements-emp"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "iron-plate"
+        end
+      end
+    end
+  end
+  t = data.raw.recipe["electromagnetic-plant-recycling"].results
   if t ~= nil then
     for i=#t,1,-1 do
       if t[i].name == "holmium-plate" then
@@ -507,10 +729,37 @@ if settings.startup["sssa-remove-gleba-material-requirements-biochamber"].value 
       end
     end
   end
+  t = data.raw.recipe["biochamber-recycling"].results
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "pentapod-egg" then
+        if settings.startup["sssa-remove-gleba-material-requirements-biochamber"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "biter-egg"
+        end
+      end
+    end
+  end
 end
 
 if settings.startup["sssa-remove-gleba-material-requirements-inserter"].value == "Remove" or settings.startup["sssa-remove-gleba-material-requirements-inserter"].value == "Replace" then
   local t = data.raw.recipe["stack-inserter"].ingredients
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "carbon-fiber" then
+        if settings.startup["sssa-remove-gleba-material-requirements-inserter"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "plastic-bar"
+        end
+      end
+      if t[i] ~= nil and t[i].name == "jelly" then
+        table.remove(t, i)
+      end
+    end
+  end
+  t = data.raw.recipe["stack-inserter-recycling"].results
   if t ~= nil then
     for i=#t,1,-1 do
       if t[i].name == "carbon-fiber" then
@@ -575,6 +824,25 @@ if settings.startup["sssa-remove-planetary-material-requirements-cryo"].value ~=
       end
     end
   end
+  t = data.raw.recipe["cryogenic-plant-recycling"].results
+  if t ~= nil then
+    for i=#t,1,-1 do
+      if t[i].name == "superconductor" then
+        if settings.startup["sssa-remove-planetary-material-requirements-cryo"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "plastic-bar"
+        end
+      end
+      if t[i] ~= nil and t[i].name == "lithium-plate" then
+        if settings.startup["sssa-remove-planetary-material-requirements-cryo"].value == "Remove" then
+          table.remove(t, i)
+        else
+          t[i].name = "iron-plate"
+        end
+      end
+    end
+  end
 end
 if settings.startup["sssa-easy-foundations"].value then
     --data.raw.item["foundation"].stack_size = 100
@@ -616,6 +884,38 @@ if settings.startup["sssa-alternate-foundation-recipe"].value ~= "No Change" the
         type = "fluid"
       }
     }
+    data.raw.recipe["foundation-recycling"].results = {
+      {
+        amount = 1,
+        extra_count_fraction = 0,
+        name = "steel-plate",
+        type = "item"
+      },
+      {
+        amount = 1,
+        extra_count_fraction = 0,
+        name = "iron-plate",
+        type = "item"
+      },
+      {
+        amount = 2.5,
+        extra_count_fraction = 0.5,
+        name = "concrete",
+        type = "item"
+      },
+      {
+        amount = 5,
+        extra_count_fraction = 0,
+        name = "stone",
+        type = "item"
+      },
+      {
+        amount = 5,
+        extra_count_fraction = 0,
+        name = "water",
+        type = "fluid"
+      }
+    }
   elseif settings.startup["sssa-alternate-foundation-recipe"].value == "Simple (Nauvis)" then
     data.raw.recipe["foundation"].ingredients = {
       {
@@ -630,6 +930,26 @@ if settings.startup["sssa-alternate-foundation-recipe"].value ~= "No Change" the
       },
       {
         amount = 20,
+        name = "water",
+        type = "fluid"
+      }
+    }
+    data.raw.recipe["foundation-recycling"].results = {
+      {
+        amount = 1,
+        extra_count_fraction = 0,
+        name = "steel-plate",
+        type = "item"
+      },
+      {
+        amount = 5,
+        extra_count_fraction = 0,
+        name = "stone",
+        type = "item"
+      },
+      {
+        amount = 5,
+        extra_count_fraction = 0,
         name = "water",
         type = "fluid"
       }
