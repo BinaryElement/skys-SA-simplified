@@ -32,6 +32,7 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * Big Mining Drill recipe's Tungsten Carbide requirement removed or replaced (with plastic).
   * Turbo Belt recipes' Tungsten Plate requirement removed or replaced (with steel plate).
   * Calcite requirement removed from the iron/copper ore to molten metal recipes.
+  * (Disabled by default) Calcite requirement removed from the lava to molten iron/copper metal recipes.
   * Artillery and Artillery Ammo recipes reverted to base game.
 * Fulgora:
   * Fulgora location requirement removed from Recycler and EM Plant.
@@ -44,3 +45,8 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * (Disabled by default) Multiply or remove the lifetime of Gleba's Agricultural Science Packs.
   * (Disabled by default) Remove the spoilage result from Gleba's Agricultural Science Packs.
   * (Disabled by default) Place artificial gleba soil anywhere.
+* Aquilo
+  * Aquilo location requirement removed from Cryogenic Plant.
+  * Cryogenic Plant's Superconductor and Lithium Plate ingredients removed or replaced (with plastic bar and iron plate)
+  * Foundations are lighter and crafted in sets of 10 at no extra cost/time.
+  * (Disabled by default) Two alternate recipes for Foundations that only require Nauvis materials.
