@@ -19,7 +19,6 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * (Disabled by default) Revert the 2.0 PLD nerf, because why not.
   * (Disabled by default) Multiply or remove the lifetime of Nutrients.
   * (Disabled by default) Remove the spoilage result from Nutrients.
-  * (Disabled by default) Allow Nutrients to be burned.
 * Space
   * (Disabled by default) Change the health of asteroids.
   * (Disabled by default) Downgrade the resistances of asteroids.  Negative values can upgrade them instead for a challenge!
