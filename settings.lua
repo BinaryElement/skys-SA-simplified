@@ -138,6 +138,13 @@ data:extend({
         default_value = true,
         order = "cad"
     },
+    {
+        type = "bool-setting",
+        name = "sssa-no-asteroid-recursion",
+        setting_type = "startup",
+        default_value = false,
+        order = "cae"
+    },
 
     -- Vulcanus Settings d
     {

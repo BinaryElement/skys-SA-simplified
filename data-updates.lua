@@ -294,6 +294,114 @@ if settings.startup["sssa-allow-roboports-in-space"].value then
   end
 end
 
+--[[
+Metallic/Carbonic/Oxide Asteroid Crushing
+Metallic/Carbonic/Oxide Asteroid Reprocessing
+Advanced Metallic/Carbonic/Oxide Asteroid Crushing
+]]
+
+if settings.startup["sssa-no-asteroid-recursion"].value then
+  data.raw.recipe["carbonic-asteroid-crushing"].results = {
+    {
+      amount = 12,
+      name = "carbon",
+      type = "item"
+    }
+  }
+  data.raw.recipe["carbonic-asteroid-reprocessing"].results = {
+    {
+      amount = 1,
+      name = "metallic-asteroid-chunk",
+      probability = 0.4,
+      type = "item"
+    },
+    {
+      amount = 1,
+      name = "oxide-asteroid-chunk",
+      probability = 0.4,
+      type = "item"
+    }
+  }
+  data.raw.recipe["advanced-carbonic-asteroid-crushing"].results = {
+    {
+      amount = 6,
+      name = "carbon",
+      type = "item"
+    },
+    {
+      amount = 3,
+      name = "sulfur",
+      type = "item"
+    }
+  }
+  data.raw.recipe["metallic-asteroid-crushing"].results = {
+    {
+      amount = 25,
+      name = "iron-ore",
+      type = "item"
+    }
+  }
+  data.raw.recipe["metallic-asteroid-reprocessing"].results = {
+    {
+      amount = 1,
+      name = "carbonic-asteroid-chunk",
+      probability = 0.4,
+      type = "item"
+    },
+    {
+      amount = 1,
+      name = "oxide-asteroid-chunk",
+      probability = 0.4,
+      type = "item"
+    }
+  }
+  data.raw.recipe["advanced-metallic-asteroid-crushing"].results = {
+    {
+      amount = 12,
+      name = "iron-ore",
+      type = "item"
+    },
+    {
+      amount = 5,
+      name = "copper-ore",
+      type = "item"
+    }
+  }
+  data.raw.recipe["oxide-asteroid-crushing"].results = {
+    {
+      amount = 6,
+      name = "ice",
+      type = "item"
+    }
+  }
+  data.raw.recipe["oxide-asteroid-reprocessing"].results = {
+    {
+      amount = 1,
+      name = "metallic-asteroid-chunk",
+      probability = 0.4,
+      type = "item"
+    },
+    {
+      amount = 1,
+      name = "carbonic-asteroid-chunk",
+      probability = 0.4,
+      type = "item"
+    }
+  }
+  data.raw.recipe["advanced-oxide-asteroid-crushing"].results = {
+    {
+      amount = 4,
+      name = "ice",
+      type = "item"
+    },
+    {
+      amount = 3,
+      name = "calcite",
+      type = "item"
+    }
+  }
+end
+
 -- ************************************************
 -- ******************** Nauvis ********************
 -- ************************************************

@@ -24,6 +24,7 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * (Disabled by default) Downgrade the resistances of asteroids.  Negative values can upgrade them instead for a challenge!
   * Allow Chests in Space
   * Allow Roboports/Robots in Space
+  * (Disabled by default) Simplify asteroid processing by removing recursion.
 * Nauvis
   * Nauvis requirement removed from Biolab placement.
   * Capture Rocket crafted with Nutrients instead of Bioflux.
