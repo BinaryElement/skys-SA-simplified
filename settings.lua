@@ -124,6 +124,20 @@ data:extend({
         setting_type = "startup",
         order = "cab"
     },
+    {
+        type = "bool-setting",
+        name = "sssa-allow-chests-in-space",
+        setting_type = "startup",
+        default_value = true,
+        order = "cac"
+    },
+    {
+        type = "bool-setting",
+        name = "sssa-allow-roboports-in-space",
+        setting_type = "startup",
+        default_value = true,
+        order = "cad"
+    },
 
     -- Vulcanus Settings d
     {

@@ -274,6 +274,25 @@ while asteroid_reduction_count < 0 do
   asteroid_reduction_count = asteroid_reduction_count + 1
 end
 
+if settings.startup["sssa-allow-chests-in-space"].value then
+  for _,group in pairs(data.raw) do
+    for _,obj in pairs(group) do
+      if obj.type == "logistic-container" or obj.type == "container" then
+        if obj.surface_conditions then obj.surface_conditions = nil end
+      end
+    end
+  end
+end
+
+if settings.startup["sssa-allow-roboports-in-space"].value then
+  for _,group in pairs(data.raw) do
+    for _,obj in pairs(group) do
+      if obj.type == "roboport" then
+        if obj.surface_conditions then obj.surface_conditions = nil end
+      end
+    end
+  end
+end
 
 -- ************************************************
 -- ******************** Nauvis ********************
@@ -331,7 +350,9 @@ elseif settings.startup["sssa-captured-biters-food-type"].value == "Either" then
   --data.raw["assembling-machine"]["captive-biter-spawner"].energy_source = nil
 end
 
--- Vulcanus
+-- ************************************************
+-- ******************* Vulcanus *******************
+-- ************************************************
 if settings.startup["sssa-remove-vulcanus-location-requirements"].value then
     data.raw.recipe["foundry"].surface_conditions = nil
     data.raw.recipe["big-mining-drill"].surface_conditions = nil

@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 16. 11. 2024
+  Features:
+    - Added option to allow chests in space
+    - Added option to allow roboports in space
+    - Coloured settings by location category
+---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 15. 11. 2024
   Features:
