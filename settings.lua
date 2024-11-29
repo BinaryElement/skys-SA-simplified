@@ -287,11 +287,18 @@ data:extend({
         order = "gab"
     },
     {
+        name = "sssa-easy-ice-platforms",
+        type = "bool-setting",
+        setting_type = "startup",
+        default_value = true,
+        order = "gaca"
+    },
+    {
         name = "sssa-easy-foundations",
         type = "bool-setting",
         setting_type = "startup",
         default_value = true,
-        order = "gac"
+        order = "gacb"
     },
     {
         name = "sssa-alternate-foundation-recipe",

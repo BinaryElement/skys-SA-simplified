@@ -932,6 +932,9 @@ end
 
 if settings.startup["sssa-remove-aquilo-location-requirements"].value then
   data.raw.recipe["cryogenic-plant"].surface_conditions = nil
+  data.raw.recipe["quantum-processor"].surface_conditions = nil
+  data.raw.recipe["fusion-generator"].surface_conditions = nil
+  data.raw.recipe["fusion-reactor"].surface_conditions = nil
 end
 if settings.startup["sssa-remove-planetary-material-requirements-cryo"].value ~= "No Change" then
   local t = data.raw.recipe["cryogenic-plant"].ingredients
@@ -972,6 +975,15 @@ if settings.startup["sssa-remove-planetary-material-requirements-cryo"].value ~=
       end
     end
   end
+end
+if settings.startup["sssa-easy-ice-platforms"].value then
+    data.raw.recipe["ice-platform"].results = {
+        {
+            amount = 10,
+            name = "ice-platform",
+            type = "item"
+        }
+    }
 end
 if settings.startup["sssa-easy-foundations"].value then
     --data.raw.item["foundation"].stack_size = 100
