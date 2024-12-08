@@ -402,6 +402,13 @@ if settings.startup["sssa-no-asteroid-recursion"].value then
   }
 end
 
+if settings.startup["sssa-planet-distance-scale"].value ~= 1 then
+  local connection_table = data.raw["space-connection"]
+  for _,connection in pairs(connection_table) do
+    connection.length = connection.length * settings.startup["sssa-planet-distance-scale"].value
+  end
+end
+
 -- ************************************************
 -- ******************** Nauvis ********************
 -- ************************************************
@@ -920,11 +927,23 @@ end
 
 if settings.startup["sssa-gleba-agriculture-anywhere"].value then
   data.raw.item["artificial-jellynut-soil"].place_as_tile.condition_size = 1
+  data.raw.item["artificial-jellynut-soil"].place_as_tile.tile_condition = data.raw.item["overgrowth-jellynut-soil"].place_as_tile.tile_condition
+  data.raw.item["artificial-jellynut-soil"].place_as_tile.condition.layers = data.raw.item["overgrowth-jellynut-soil"].place_as_tile.condition.layers
+  data.raw.item["artificial-yumako-soil"].place_as_tile.condition_size = 1
+  data.raw.item["artificial-yumako-soil"].place_as_tile.tile_condition = data.raw.item["overgrowth-yumako-soil"].place_as_tile.tile_condition
+  data.raw.item["artificial-yumako-soil"].place_as_tile.condition.layers = data.raw.item["overgrowth-yumako-soil"].place_as_tile.condition.layers
+  data.raw.item["overgrowth-jellynut-soil"].place_as_tile.condition_size = 1
+  data.raw.item["overgrowth-jellynut-soil"].place_as_tile.tile_condition = nil
+  data.raw.item["overgrowth-jellynut-soil"].place_as_tile.condition.layers = {}
+  data.raw.item["overgrowth-yumako-soil"].place_as_tile.condition_size = 1
+  data.raw.item["overgrowth-yumako-soil"].place_as_tile.tile_condition = nil
+  data.raw.item["overgrowth-yumako-soil"].place_as_tile.condition.layers = {}
+  --[[data.raw.item["artificial-jellynut-soil"].place_as_tile.condition_size = 1
   data.raw.item["artificial-jellynut-soil"].place_as_tile.tile_condition = nil
-  data.raw.item["artificial-jellynut-soil"].place_as_tile.condition.layers = {water_tile = true}
+  data.raw.item["artificial-jellynut-soil"].place_as_tile.condition.layers = {water_tile = true, ground_tile = true}
   data.raw.item["artificial-yumako-soil"].place_as_tile.condition_size = 1
   data.raw.item["artificial-yumako-soil"].place_as_tile.tile_condition = nil
-  data.raw.item["artificial-yumako-soil"].place_as_tile.condition.layers = {water_tile = true}
+  data.raw.item["artificial-yumako-soil"].place_as_tile.condition.layers = {water_tile = true, ground_tile = true}]]
 end
 -- ************************************************
 -- ******************** Aquilo ********************

@@ -25,6 +25,7 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * Allow Chests in Space
   * Allow Roboports/Robots in Space
   * (Disabled by default) Simplify asteroid processing by removing recursion.
+  * Modify the length of interplanetary routes.
 * Nauvis
   * Nauvis requirement removed from Biolab placement.
   * Capture Rocket crafted with Nutrients instead of Bioflux.
@@ -47,9 +48,10 @@ I had the idea when I got annoyed at foundries needing to be made on Volcanus, b
   * Stack Inserter recipe's Jelly and Carbon Fiber requirements removed or replaced (with plastic).
   * (Disabled by default) Multiply or remove the lifetime of Gleba's Agricultural Science Packs.
   * (Disabled by default) Remove the spoilage result from Gleba's Agricultural Science Packs.
-  * (Disabled by default) Place artificial gleba soil anywhere.
+  * (Disabled by default) Artificial biome soil and Overgrowth biome soil can be placed in more areas.
 * Aquilo
-  * Aquilo location requirement removed from Cryogenic Plant.
+  * Aquilo location requirement removed from Cryogenic Plant, Quantum Processors, and Fusion Power Plant Parts.
   * Cryogenic Plant's Superconductor and Lithium Plate ingredients removed or replaced (with plastic bar and iron plate)
+  * Ice Platforms are crafted in sets of 10 at no extra cost/time.
   * Foundations are lighter and crafted in sets of 10 at no extra cost/time.
   * (Disabled by default) Two alternate recipes for Foundations that only require Nauvis materials.

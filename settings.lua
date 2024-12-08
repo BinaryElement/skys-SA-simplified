@@ -145,6 +145,15 @@ data:extend({
         default_value = false,
         order = "cae"
     },
+    {
+        type = "double-setting",
+        name = "sssa-planet-distance-scale",
+        setting_type = "startup",
+        default_value = 1,
+        minimum_value = 0.01,
+        maximum_value = 1000,
+        order = "caf"
+    },
 
     -- Vulcanus Settings d
     {

@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.5
+Date: 29. 11. 2024
+  Features:
+    - Fixed "Agriculture Anywhere" ironically preventing you from placing agriculture blocks where vanilla normally lets you.
+    - "Agriculture Anywhere" now improves overgrowth tiles too
+    - "Agriculture Anywhere" renamed to "Improved Agriculture Tiles"
+---------------------------------------------------------------------------------------------------
+Version: 0.3.4
+Date: 29. 11. 2024
+  Features:
+    - Added option to adjust the distance of interplanetary routes.
+---------------------------------------------------------------------------------------------------
 Version: 0.3.3
 Date: 29. 11. 2024
   Features:
