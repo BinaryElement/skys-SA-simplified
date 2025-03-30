@@ -414,6 +414,7 @@ end
 -- ************************************************
 if settings.startup["sssa-remove-nauvis-location-requirements"].value then
   data.raw.lab["biolab"].surface_conditions = nil
+  data.raw["assembling-machine"]["captive-biter-spawner"].surface_conditions = nil
 end
 if settings.startup["sssa-capture-rocket-no-bioflux"].value then
   local t = data.raw.recipe["capture-robot-rocket"].ingredients
@@ -463,6 +464,16 @@ elseif settings.startup["sssa-captured-biters-food-type"].value == "Either" then
 --elseif settings.startup["sssa-captured-biters-food-type"].value == "None" then --Removed for errors
   --data.raw["assembling-machine"]["captive-biter-spawner"].energy_usage = nil
   --data.raw["assembling-machine"]["captive-biter-spawner"].energy_source = nil
+end
+
+if settings.startup["sssa-nauvis-asteroid-scale"].value ~= 1 then
+  local t = data.raw.planet.nauvis.asteroid_spawn_definitions
+  local m = settings.startup["sssa-nauvis-asteroid-scale"].value
+  if t ~= nil then
+    for i=#t,1,-1 do
+      t[i].probability = t[i].probability * m
+    end
+  end
 end
 
 -- ************************************************

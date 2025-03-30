@@ -104,6 +104,15 @@ data:extend({
         setting_type = "startup",
         order = "bac"
     },
+    {
+        type = "double-setting",
+        name = "sssa-nauvis-asteroid-scale",
+        setting_type = "startup",
+        default_value = 1,
+        minimum_value = 0.01,
+        maximum_value = 1000,
+        order = "bad"
+    },
 
     -- Space Settings c
     {

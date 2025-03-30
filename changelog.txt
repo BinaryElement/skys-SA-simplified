@@ -1,6 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.6
+Date: 29. 3. 2025
+  Features:
+    - Added option to multiply the gatherable asteroids in Nauvis' orbit
+    - Remove Nauvis Loc. Requirements now removes location requirements from Captive Biter Nests
+---------------------------------------------------------------------------------------------------
 Version: 0.3.5
-Date: 29. 11. 2024
+Date: 8. 12. 2024
   Features:
     - Fixed "Agriculture Anywhere" ironically preventing you from placing agriculture blocks where vanilla normally lets you.
     - "Agriculture Anywhere" now improves overgrowth tiles too
