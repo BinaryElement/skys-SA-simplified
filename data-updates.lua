@@ -618,14 +618,14 @@ if settings.startup["sssa-remove-vulcanus-material-requirements-belts"].value ==
   end
 end
 if settings.startup["sssa-remove-calcite-from-melting-ores"].value then
-    data.raw.recipe["molten-copper"].ingredients = {
+    data.raw.recipe["copper-ore-melting"].ingredients = {
         {
             amount = 50,
             name = "copper-ore",
             type = "item"
         }
     }
-    data.raw.recipe["molten-iron"].ingredients = {
+    data.raw.recipe["iron-ore-melting"].ingredients = {
         {
             amount = 50,
             name = "iron-ore",
